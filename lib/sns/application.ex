@@ -15,9 +15,15 @@ defmodule Sns.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: Sns.PubSub},
       # Start the Endpoint (http/https)
-      SnsWeb.Endpoint
+      SnsWeb.Endpoint,
       # Start a worker by calling: Sns.Worker.start_link(arg)
       # {Sns.Worker, arg}
+      {Desktop.Window,[
+          app: :sns,
+          id: SnsWindow,
+          url: &SnsWeb.Endpoint.url/0
+        ]
+      }
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
