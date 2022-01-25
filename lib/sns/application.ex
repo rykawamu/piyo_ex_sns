@@ -21,6 +21,8 @@ defmodule Sns.Application do
       {Desktop.Window,[
           app: :sns,
           id: SnsWindow,
+          title: "Elixirへのいざない、だよ",
+          size: {500, 600},
           url: &SnsWeb.Endpoint.url/0
         ]
       }
