@@ -12,6 +12,7 @@ config :sns,
 
 # Configures the endpoint
 config :sns, SnsWeb.Endpoint,
+  http: [ip: {127, 0, 0, 1}, port: 0],
   url: [host: "localhost"],
   render_errors: [view: SnsWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: Sns.PubSub,
